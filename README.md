@@ -14,7 +14,7 @@ O objetivo é criar uma aplicação confiável, escalável e viável para a inst
 
 ## 👥 Membros da Equipe
 - Gabriel Moreno (@mRn283)
-- Nome 2 (@user2)
+- Natan P. S.  (@NatanPss)
 - Nome 3 (@user3)
 - Nome 4 (@user4)
 
