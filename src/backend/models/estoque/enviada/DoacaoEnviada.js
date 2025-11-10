@@ -1,15 +1,17 @@
 const Beneficiario = require('../../pessoa/beneficiario');
 const Doacao = require('../Doacao');
+const moment = require('moment');
 
 class DoacaoEnviada extends Doacao {
     idDoacaoEnviada;
-    operador;
     beneficiario;
+    dataEnvio;
 
-    constructor(idDoacaoEnviada, tipo, quantidade, dataEnvio, operador, beneficiario) {
-        super(tipo, quantidade, dataEnvio, operador);
+    constructor(idDoacaoEnviada, tipo, quantidade, operador, beneficiario) {
+        super(tipo, quantidade, operador);
         this.idDoacaoEnviada = idDoacaoEnviada;
-        this.beneficiario = beneficiario instanceof Beneficiario.idBeneficiario;
+        this.beneficiario = beneficiario instanceof Beneficiario ? beneficiario : null;
+        this.dataEnvio = moment().format('DD-MM-YYYY HH:mm:ss');
     }
 
     map() {
@@ -19,10 +21,7 @@ class DoacaoEnviada extends Doacao {
             quantidade: this.quantidade,
             dataEnvio: this.dataEnvio,
             operador: this.operador?.map?.() || null,
-            beneficiario: this.beneficiario?.map?.() || null,
-            dataRecebimento: this.dataRecebimento 
-                ? moment(this.dataRecebimento).format('DD-MM-YYYY HH:mm:ss') 
-                : null
+            beneficiario: this.beneficiario?.map?.() || null
         };
     }
 }

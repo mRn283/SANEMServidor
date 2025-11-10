@@ -1,10 +1,12 @@
 class Tipo {
     idTipo;
     descricao;
+
     constructor(idTipo, descricao) {
         this.idTipo = idTipo;
-        this.descricao = descricao;
+        this.descricao = descricao ?? '';
     }
+
     map() {
         return {
             idTipo: this.idTipo,

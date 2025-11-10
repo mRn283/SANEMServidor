@@ -1,6 +1,6 @@
 const DoacaoEnviada = require('./DoacaoEnviada');
 const Estoque = require('../estoque');
-const tipo = require('../tipo/tipo');
+const Tipo = require('../tipo/tipo');
 
 class DoacaoEnviadaEstoque {
     doacaoEnviada;
@@ -9,11 +9,12 @@ class DoacaoEnviadaEstoque {
     tipo;
 
     constructor(doacaoEnviada, estoque, quantidade, tipo) {
-        this.doacaoEnviada = doacaoEnviada instanceof DoacaoEnviada.idDoacaoEnviada;
-        this.estoque = estoque instanceof Estoque.idEstoque;
-        this.quantidade = quantidade instanceof DoacaoEnviada.quantidade;
-        this.tipo = tipo instanceof tipo.idTipo;
+        this.doacaoEnviada = doacaoEnviada instanceof DoacaoEnviada ? doacaoEnviada : null;
+        this.estoque = estoque instanceof Estoque ? estoque : null;
+        this.quantidade = quantidade ?? 0;
+        this.tipo = tipo instanceof Tipo ? tipo : null;
     }
+
     map() {
         return {
             doacaoEnviada: this.doacaoEnviada?.map?.() || null,
@@ -23,4 +24,5 @@ class DoacaoEnviadaEstoque {
         };
     }
 }
+
 module.exports = DoacaoEnviadaEstoque;

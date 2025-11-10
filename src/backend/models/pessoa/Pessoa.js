@@ -1,16 +1,24 @@
 class Pessoa {
-  
-  nome;
-  telefone;
-  endereco;
-  documento;
+    nome;
+    telefone;
+    endereco;
+    documento;
 
-  constructor( nome, telefone, endereco, documento) {
-    this.nome = nome;
-    this.telefone = telefone ?? "000";
-    this.endereco = endereco ?? "000";
-    this.documento = documento;
-  }
+    constructor(nome, telefone, endereco, documento) {
+        this.nome = nome;
+        this.telefone = telefone;
+        this.endereco = endereco;
+        this.documento = documento;
+    }
+
+    map() {
+        return {
+            nome: this.nome,
+            telefone: this.telefone,
+            endereco: this.endereco,
+            documento: this.documento
+        };
+    }
 }
 
 module.exports = Pessoa;

@@ -1,6 +1,5 @@
-const Operador = require('./operador');
+const Operador = require('./Operador');
 const moment = require('moment');
-
 
 class Login {
     idLogin;
@@ -9,14 +8,14 @@ class Login {
 
     constructor(idLogin, operador) {
         this.idLogin = idLogin;
-        this.operador = operador instanceof Operador;
+        this.operador = operador instanceof Operador ? operador : null;
         this.dataLogin = moment().format('DD-MM-YYYY HH:mm:ss');
     }
 
     map() {
         return {
             idLogin: this.idLogin,
-            operador: this.operador?.map?.() || null,
+            operador: this.operador ? this.operador.map() : null,
             dataLogin: this.dataLogin
         };
     }
