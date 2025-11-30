@@ -1,0 +1,22 @@
+{
+  "name": "sanem-servidor",
+  "version": "1.0.0",
+  "description": "Servidor backend SANEM - versão em memória para testes",
+  "main": "src/main.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/main.js",
+    "dev": "nodemon src/main.js"
+  },
+  "author": "Gabriel Moreno",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "moment": "^2.30.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  },
+  "keywords": []
+}
